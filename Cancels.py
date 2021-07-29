@@ -5,7 +5,7 @@ import Moves
 
 
 class Cancels(Moves):
-
+    """Moves can be canceled into Jump or Special moves and need representation"""
     def __init__(self, name: str = "jump"):
 
         if name == "jump":

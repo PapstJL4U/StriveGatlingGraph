@@ -6,6 +6,7 @@ from Moves import Moves
 
 
 class Table(object):
+    """This class represents the complete gatling table with moves and gattlings."""
 
     def __init__(self, name: str, attack_list: Iterable[Moves]):
         self._name = name
@@ -14,6 +15,7 @@ class Table(object):
 
     @property
     def name(self):
+        "should be the name of the character"
         return self._name
 
     @name.setter
@@ -22,6 +24,7 @@ class Table(object):
 
     @property
     def attack_list(self) -> Iterable[Moves]:
+        "List of attacks"
         return self._attack_list
 
     @attack_list.setter
@@ -36,6 +39,7 @@ class Table(object):
 
     @property
     def gatlings(self):
+        "returns all possible gatlings"
         return self._gatlings
 
     @gatlings.setter

@@ -4,10 +4,13 @@
 from typing import List
 
 class Moves(object):
+    """A class the represents a distinct Move of character within the context of a gatling table for Guilty Gear"""
 
+    """The 5 types of attacks"""
     __styles = ["punch", "kick", "slash", "heavy slash", "dust"]
 
     def __init__(self, name: str = "5P", **kwargs):
+
         self._name = name.upper()
         if kwargs.get("style") == None:
             self._find_my_style(self._name)
@@ -19,10 +22,11 @@ class Moves(object):
 
     @classmethod
     def get_possible_attack_styles(self) -> List[str]:
+        """Returns a list with all style an attack can be."""
         return self.__styles
 
     def attack_data(self, style: str, startup: int, active: int, recovery: int):
-
+        """Nethod to later change attack data if not done during creation"""
         self._style = style
         self._startup = startup
         self._active = active
@@ -30,7 +34,7 @@ class Moves(object):
 
 
     def _find_my_style(self, name: str):
-
+        """Method to guess the style of an attack based on its move name"""
         if "jump" in name.lower():
             self._style = "extra"
         elif "special" in name.lower():
@@ -111,7 +115,8 @@ class Moves(object):
 
     @property
     def colour(self, htmlcode: bool = False) -> str:
-
+        """function, that retunrs a colour based on attack style based on the Guilty Gear colour coding.
+        If htmlcode=true it returns a valid html code in str"""
         if self._style == None:
             self._find_my_style(self.name)
 
@@ -150,7 +155,7 @@ class Moves(object):
         return colour
 
     def __repr__(self):
-
+        """changes the representation style for logging depending on set properties to be distinct"""
         if self._startup == None:
             value = "Name:"+self._name
         else:

@@ -5,6 +5,7 @@ from typing import Type, List
 from Table import Table
 from Moves import Moves
 from DrawTable import DrawTable
+import os
 
 def Ino():
 
@@ -46,4 +47,8 @@ if __name__ == '__main__':
     for g in test.gatlings:
         print(g)
 
-    newTable = DrawTable.generate_groups(table=test)
+    newTable, width, height = DrawTable.generate_groups(table=test)
+    image = DrawTable.generate_image(table=test, group= newTable, width=width, height=height)
+    out = DrawTable.draw_button(image, 0, test.attack_list[0])
+    I
+    out.save(os.path.join("output", "test.png"))

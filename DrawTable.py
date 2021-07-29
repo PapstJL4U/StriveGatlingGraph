@@ -29,15 +29,22 @@ class DrawTable:
         height = len(group)
         return group, width, height
 
-    def draw_button(draw_instance, x_coord, move : Type[Moves]):
+    def draw_button(draw_instance, x_coord, move: Type[Moves]):
 
-        draw = draw_instance
-        x = x_coord
         col = ImageColor.getrgb(move.colour)
-        draw.ellipse((x, x, x+200, x+200), fill=col, outline=(0, 0, 0))
+        x = x_coord
 
-    def generate_image(table, group, height, width):
+        btn = Image.new("RGBA", [100,100], (255, 255, 255, 0))
+        fnt = ImageFont.truetype(r'C:\Windows\Fonts\chintzy.ttf', 60)
+        txt_layer = ImageDraw.Draw(btn)
+        txt_layer.ellipse([(x, x), (x + 100, x + 100)], fill=col, outline=(0, 0, 0))
+        txt_layer.text((x + 12, x + 27), str(move.name), fill=(0, 0, 0, 255), font=fnt)
+
+        btn.show()
+        return btn
+
+    def generate_image(table, group, width, height):
         """generate an image"""
         icon_w, icon_h = 250, 250
         table_image = Image.new(mode="RGBA", size=(icon_w * width, height * icon_h))
-
+        return table_image
