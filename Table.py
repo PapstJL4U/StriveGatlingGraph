@@ -7,11 +7,15 @@ from Moves import Moves
 
 class Table(object):
     """This class represents the complete gatling table with moves and gattlings."""
-
+"""
+    _name = None
+    _attack_list = None 
+    _gatlings = None
+"""
     def __init__(self, name: str, attack_list: Iterable[Moves]):
         self._name = name
         self._attack_list = attack_list
-        self._gatlings: [str] = []
+        self._gatlings = []
 
     @property
     def name(self):
@@ -94,4 +98,5 @@ class Table(object):
         str_lst = []
         for move in self._attack_list:
             str_lst.append(move.name)
+        
         return str_lst

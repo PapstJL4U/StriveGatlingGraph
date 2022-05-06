@@ -8,6 +8,10 @@ class Moves(object):
 
     """The 5 types of attacks"""
     __styles = ["punch", "kick", "slash", "heavy slash", "dust", "cancel"]
+        _style = kwargs.get("style")
+        _startup = kwargs.get("startup")
+        _active = kwargs.get("active")
+        _recovery = kwargs.get("recovery")
 
     def __init__(self, name: str = "5P", **kwargs):
 
@@ -16,9 +20,11 @@ class Moves(object):
             self._find_my_style(self._name)
         else:
             self._style = kwargs.get("style")
-            self._startup = kwargs.get("startup")
-            self._active = kwargs.get("active")
-            self._recovery = kwargs.get("recovery")
+        
+        #dont indend like me :/
+        self._startup = kwargs.get("startup")
+        self._active = kwargs.get("active")
+        self._recovery = kwargs.get("recovery")
 
     @classmethod
     def get_possible_attack_styles(self) -> List[str]:
