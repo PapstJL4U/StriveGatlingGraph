@@ -7,7 +7,7 @@ class Moves(object):
     """A class the represents a distinct Move of character within the context of a gatling table for Guilty Gear"""
 
     """The 5 types of attacks"""
-    __styles = ["punch", "kick", "slash", "heavy slash", "dust"]
+    __styles = ["punch", "kick", "slash", "heavy slash", "dust", "cancel"]
 
     def __init__(self, name: str = "5P", **kwargs):
 
@@ -16,9 +16,9 @@ class Moves(object):
             self._find_my_style(self._name)
         else:
             self._style = kwargs.get("style")
-        self._startup = kwargs.get("startup")
-        self._active = kwargs.get("active")
-        self._recovery = kwargs.get("recovery")
+            self._startup = kwargs.get("startup")
+            self._active = kwargs.get("active")
+            self._recovery = kwargs.get("recovery")
 
     @classmethod
     def get_possible_attack_styles(self) -> List[str]:
