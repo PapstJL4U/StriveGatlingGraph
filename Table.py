@@ -3,15 +3,14 @@
 """this class represents a gatling table"""
 from typing import Type, List, Iterable
 from Moves import Moves
-
-
 class Table(object):
     """This class represents the complete gatling table with moves and gattlings."""
-"""
+    """
     _name = None
     _attack_list = None 
     _gatlings = None
-"""
+    """
+
     def __init__(self, name: str, attack_list: Iterable[Moves]):
         self._name = name
         self._attack_list = attack_list

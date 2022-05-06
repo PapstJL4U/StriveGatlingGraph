@@ -35,7 +35,7 @@ class DrawTable:
         x = x_coord
 
         btn = Image.new("RGBA", [100,100], (255, 255, 255, 0))
-        fnt = ImageFont.truetype(r'C:\Windows\Fonts\chintzy.ttf', 60)
+        fnt = ImageFont.truetype(r'C:\Windows\Fonts\Arial.ttf', 60)
         txt_layer = ImageDraw.Draw(btn)
         txt_layer.ellipse([(x, x), (x + 100, x + 100)], fill=col, outline=(0, 0, 0))
         txt_layer.text((x + 12, x + 27), str(move.name), fill=(0, 0, 0, 255), font=fnt)

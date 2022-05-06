@@ -8,10 +8,6 @@ class Moves(object):
 
     """The 5 types of attacks"""
     __styles = ["punch", "kick", "slash", "heavy slash", "dust", "cancel"]
-        _style = kwargs.get("style")
-        _startup = kwargs.get("startup")
-        _active = kwargs.get("active")
-        _recovery = kwargs.get("recovery")
 
     def __init__(self, name: str = "5P", **kwargs):
 
